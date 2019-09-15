@@ -1,0 +1,67 @@
+class BookList {
+    constructor(numRead,numNotRead,nextBook,beingRead,lastBook,allBook)
+    {
+        this.numRead = numRead ,
+        this.numNotRead = numNotRead ,
+        this.nextBook = nextBook,
+        this.beingRead = beingRead,
+        this.lastBook = lastBook,
+        this.allBook = allBook
+    }
+
+    add(book)
+    {
+        this.allBook.push(book)
+    }
+
+    finishCurrentBook()
+    {
+        this.beingRead.Read = true,
+        this.lastBook = this.beingRead,
+        this.beingRead = this.nextBook
+        // this.nextBook = this.booknotRead.unshift();
+
+
+    }
+};
+
+class Book {
+    constructor(Title,Genre,Author,Read)
+    {
+        this.Title = Title,
+        this.Genre = Genre,
+        this.Author = Author,
+        this.Read = Read
+    }
+
+}
+
+var Book1 = new Book('JavaScript','Language','Ninja',false);
+var Book2 = new Book('Java','Language','Murad',false);
+var Book3 = new Book('C++','Language','Nicolas',false);
+var Book4 = new Book('C#','Language','Sol',true);
+var Book5 = new Book('PHP','Language','DSK',true);
+
+var anotherBook = new Book('Chill','HipHop','DSK',false);
+
+var List = [Book1,Book2,Book3,Book4,Book5];
+
+var All = new BookList(1,3,Book2,Book3,Book4,List);
+console.log(All);
+All.add(anotherBook);
+
+All.finishCurrentBook();
+console.log(All);
+
+
+
+
+
+
+
+
+
+
+
+
+
